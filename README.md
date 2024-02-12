@@ -2,6 +2,8 @@
 
 Notify specific channels that an emoji has been added
 
+![sample image](images/image.png)
+
 ## requirements
 
 ### `.env`
