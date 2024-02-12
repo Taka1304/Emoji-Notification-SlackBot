@@ -14,7 +14,7 @@ import (
 func main() {
 	err := godotenv.Load()
 	if err != nil {
-			log.Fatalf("Error loading .env file: %v", err)
+		log.Fatalf("Error loading .env file: %v", err)
 	}
 
 	http.HandleFunc("/slack/events", func(w http.ResponseWriter, r *http.Request) {
@@ -41,7 +41,7 @@ func main() {
 				api := slack.New(os.Getenv("SLACK_BOT_TOKEN"))
 				channelID := os.Getenv("CHANNEL_ID")
 				name := eventData["name"].(string)
-				text := fmt.Sprintf("新しい絵文字が追加されました! `:%s:` :%s:", name, name)
+				text := fmt.Sprintf("新しい絵文字が追加されました! \n`:%s:` :%s:", name, name)
 				_, _, err := api.PostMessage(channelID, slack.MsgOptionText(text, false))
 				if err != nil {
 					log.Printf("Failed to post message: %v", err)
