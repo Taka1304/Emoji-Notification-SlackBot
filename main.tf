@@ -165,3 +165,8 @@ data "aws_iam_policy_document" "api_gateway_policy" {
     resources = ["${aws_apigatewayv2_api.api.execution_arn}/*"]
   }
 }
+
+output "api_endpoint" {
+  description = "The endpoint URL of the API Gateway"
+  value       = aws_apigatewayv2_api.api.api_endpoint
+}
