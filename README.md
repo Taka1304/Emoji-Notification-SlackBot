@@ -6,11 +6,13 @@ Notify specific channels that an emoji has been added
 
 ## requirements
 - golang
-- (ngrok)
 - terraform
 - aws
 
 ### `.env`
+```
+cp .env.example .env
+```
 
 | ENV | Description |
 | -------- | -------- |
